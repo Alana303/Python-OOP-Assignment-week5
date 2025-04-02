@@ -1,0 +1,75 @@
+# Assignment 1: Design Your Own Class! 🏗️
+
+# Define the Smartphone class
+class Smartphone:
+    def __init__(self, brand, model, battery_life):
+        self.brand = brand
+        self.model = model
+        self.battery_life = battery_life
+
+    # Method to turn on the smartphone
+    def turn_on(self):
+        print(f"{self.brand} {self.model} is now ON!")
+
+    # Method to make a call
+    def make_call(self, number):
+        print(f"Calling {number} from {self.brand} {self.model}...")
+
+    # Method to check the battery life
+    def check_battery(self):
+        print(f"Battery life of {self.brand} {self.model}: {self.battery_life}%")
+
+# Subclass that inherits from Smartphone
+class SmartphoneWithCamera(Smartphone):
+    def __init__(self, brand, model, battery_life, camera_quality):
+        super().__init__(brand, model, battery_life)
+        self.camera_quality = camera_quality
+
+    # Method to take a photo
+    def take_photo(self):
+        print(f"Taking a photo with {self.camera_quality} MP camera...")
+
+# Create an object of SmartphoneWithCamera
+my_camera_phone = SmartphoneWithCamera("Samsung", "Galaxy S21", 90, 108)
+
+# Call inherited and new methods
+print("Smartphone Example:")
+my_camera_phone.turn_on()
+my_camera_phone.make_call("987-654-3210")
+my_camera_phone.check_battery()
+my_camera_phone.take_photo()
+print("\n")  # Separator for clarity
+
+
+# Assignment 2: Polymorphism Challenge! 🎭
+
+# Base class for Animal
+class Animal:
+    def move(self):
+        raise NotImplementedError("Subclasses must implement this method")
+
+# Subclass for Car
+class Car(Animal):
+    def move(self):
+        print("Driving 🚗")
+
+# Subclass for Plane
+class Plane(Animal):
+    def move(self):
+        print("Flying ✈️")
+
+# Subclass for Fish
+class Fish(Animal):
+    def move(self):
+        print("Swimming 🐟")
+
+# Create objects for each class
+car = Car()
+plane = Plane()
+fish = Fish()
+
+# Call the move() method for each object
+print("Polymorphism Example:")
+car.move()
+plane.move()
+fish.move()
